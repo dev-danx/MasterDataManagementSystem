@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.UseOrleans(siloBuilder =>
 {
     siloBuilder.UseLocalhostClustering();
-    //siloBuilder.AddMemoryGrainStorage("Elements");
+    siloBuilder.AddMemoryGrainStorage("Default");
     siloBuilder.Configure<ClusterOptions>(opt =>
     {
         opt.ClusterId = "dev";

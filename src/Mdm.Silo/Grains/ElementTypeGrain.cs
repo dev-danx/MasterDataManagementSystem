@@ -4,18 +4,17 @@ using Orleans;
 
 namespace Mdm.Silo.Grains;
 
-public class ElementTypeGrain : Grain, IElementTypeGrain
+public class ElementTypeGrain : Grain<ElementType>, IElementTypeGrain
 {
-    private ElementType? _state;
     
     public Task CreateAsync(ElementType elementType)
     {
-        _state = elementType;
+        State = elementType;
         return Task.CompletedTask;
     }
 
-    public Task<ElementType?> GetAsync()
+    public Task<ElementType> GetAsync()
     {
-        return Task.FromResult(_state);
+        return Task.FromResult(State);
     }
 }

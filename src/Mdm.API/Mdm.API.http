@@ -17,3 +17,11 @@ Content-Type: application/json
   "name": "VendorService"
 }
 ###
+
+POST {{Mdm.API_HostAddress}}/FilterElements/
+Accept: application/json
+Content-Type: application/json
+
+{
+}
+###

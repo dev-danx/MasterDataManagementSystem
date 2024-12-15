@@ -14,6 +14,10 @@ public class CreateElementEndpoint(IGrainFactory grainFactory) : Endpoint<Elemen
 
     public override async Task HandleAsync(ElementRequest req, CancellationToken ct)
     {
+        if (req.Attributes == null)
+        {
+            req.Attributes = new List<ElementRequestAttribute>();
+        }
         var key = Guid.NewGuid();
         var grain = grainFactory.GetGrain<IElementGrain>(key);
         await grain.CreateAsync(Mapper.Map(req));

@@ -1,17 +1,16 @@
 using Mdm.Core;
 using Mdm.Core.Grains;
-using Orleans;
 
 namespace Mdm.Silo.Grains;
 
 
-public class ElementGrain : Grain, IElementGrain
+public class ElementGrain(IGrainFactory grainFactory) : Grain<Element>, IElementGrain
 {
-    private Element? _state;
-    public Task CreateAsync(Element element)
+    public async Task CreateAsync(Element element)
     {
-        _state = element;
-        return Task.CompletedTask;
+        State = element;
+        var registry = grainFactory.GetGrain<IElementRegistryGrain>(Constants.ElementRegistryGrainKey);
+        await registry.RegisterElementAsync(this.GetPrimaryKey(), element.Type.Id);
     }
 
     public Task UpdateAsync(Element element)
