@@ -11,6 +11,7 @@
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.6"/>
         <PackageReference Include="Microsoft.Orleans.OrleansRuntime" Version="3.7.2" />
         <PackageReference Include="Microsoft.Orleans.Persistence.Memory" Version="9.0.1" />
+        <PackageReference Include="Microsoft.Orleans.Server" Version="9.0.1" />
         <PackageReference Include="Orleans.StorageProvider.Blob" Version="1.1.1.1" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
     </ItemGroup>

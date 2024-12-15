@@ -1,6 +1,19 @@
 @Mdm.API_HostAddress = http://localhost:5074
 
-GET {{Mdm.API_HostAddress}}/weatherforecast/
+POST {{Mdm.API_HostAddress}}/CreateElementType/
 Accept: application/json
+Content-Type: application/json
 
+{
+  "name": "VendorService"
+}
+###
+
+POST {{Mdm.API_HostAddress}}/CreateElement/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "VendorService"
+}
 ###

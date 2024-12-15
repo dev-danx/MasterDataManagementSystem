@@ -17,6 +17,14 @@ public static class Mapper
             }).ToList()
         };
     }
+    
+    public static ElementType Map(ElementTypeRequest request)
+    {
+        return new ElementType
+        {
+            Name = request.Name
+        };
+    }
 
     public static string ElementKey(ElementRequest element)
     {

@@ -6,7 +6,7 @@ namespace Mdm.Core;
 public class Element
 {
     [Id(0)]
-    public long Id { get; set; }
+    public Guid Id { get; set; }
     [Id(1)]
     public string Name { get; set; } = string.Empty;
     [Id(2)]

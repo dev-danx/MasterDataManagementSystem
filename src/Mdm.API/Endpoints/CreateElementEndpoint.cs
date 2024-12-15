@@ -9,6 +9,7 @@ public class CreateElementEndpoint(IGrainFactory grainFactory) : Endpoint<Elemen
     public override void Configure()
     {
         Post("/CreateElement");
+        AllowAnonymous();
     }
 
     public override async Task HandleAsync(ElementRequest req, CancellationToken ct)
