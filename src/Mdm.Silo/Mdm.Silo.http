@@ -1,0 +1,6 @@
+@Mdm.Silo_HostAddress = http://localhost:5289
+
+GET {{Mdm.Silo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
